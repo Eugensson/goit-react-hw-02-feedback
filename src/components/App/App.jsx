@@ -1,10 +1,14 @@
-import React from 'react';
-import Statistics from '../Statistics/Statistics';
-import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
-import Section from 'components/Section/Section';
-import Notification from 'components/Notification/Notification';
+import {
+  Statistics,
+  FeedbackOptions,
+  Section,
+  React,
+  Notification,
+} from 'components/App/index';
 
-class Feedback extends React.Component {
+import { Container } from './App.styled';
+
+class App extends React.Component {
   state = {
     good: 0,
     neutral: 0,
@@ -34,7 +38,7 @@ class Feedback extends React.Component {
     );
 
     return (
-      <>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
@@ -55,15 +59,9 @@ class Feedback extends React.Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </>
+      </Container>
     );
   }
 }
 
-export const App = () => {
-  return (
-    <>
-      <Feedback />
-    </>
-  );
-};
+export default App;

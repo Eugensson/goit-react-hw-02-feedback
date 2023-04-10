@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  FeedbackContainer,
+  FeedbackButton,
+} from 'components/FeedbackOptions/FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
-      <button type="button" onClick={() => onLeaveFeedback(options[0])}>
+    <FeedbackContainer>
+      <FeedbackButton type="button" onClick={() => onLeaveFeedback(options[0])}>
         Good
-      </button>
-      <button type="button" onClick={() => onLeaveFeedback(options[1])}>
+      </FeedbackButton>
+      <FeedbackButton type="button" onClick={() => onLeaveFeedback(options[1])}>
         Neutral
-      </button>
-      <button type="button" onClick={() => onLeaveFeedback(options[2])}>
+      </FeedbackButton>
+      <FeedbackButton type="button" onClick={() => onLeaveFeedback(options[2])}>
         Bad
-      </button>
-    </div>
+      </FeedbackButton>
+    </FeedbackContainer>
   );
 };
 
